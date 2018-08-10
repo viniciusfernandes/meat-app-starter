@@ -4,6 +4,7 @@ import { Http } from "@angular/http";
 import { REST_API } from "../app.rest.api";
 import { Observable } from "rxjs/Observable";
 import  "rxjs/add/operator/map";
+import { MenuItem } from "./menu-item/menu-item.model";
 
 @Injectable()
 
@@ -17,5 +18,11 @@ export class RestaurantService{
 
     restaurantById(id:string):Observable<Restaurant>{
         return this.http.get(`${REST_API}/restaurants/${id}`).map(response => response.json());
+    }
+    
+
+    menuOfRestaurant(id:string):Observable<MenuItem[]>{
+        return this.http.get(`${REST_API}/restaurants/${id}/menu`).map(response=>response.json());
+  
     }
 }
