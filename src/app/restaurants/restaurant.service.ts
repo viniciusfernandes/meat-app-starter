@@ -14,6 +14,7 @@ export class RestaurantService{
     }
     restaurants():Observable<Restaurant[]>{
         return this.http.get(`${REST_API}/restaurants`).map(response => response.json());
+
     }
 
     restaurantById(id:string):Observable<Restaurant>{
