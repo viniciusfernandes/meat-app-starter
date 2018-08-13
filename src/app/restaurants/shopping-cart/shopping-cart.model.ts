@@ -8,7 +8,7 @@ export class ShoppingCart{
         this.cartItems=[];
     }
     total(){
-        return this.cartItems.map(item=> item.quantity).reduce((a,b)=> a+b, 0);
+        return this.cartItems.map(item=> item.value()).reduce((a,b)=> a+b, 0);
     }
 
     addItem(item:MenuItem){

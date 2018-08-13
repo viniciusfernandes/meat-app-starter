@@ -8,4 +8,8 @@ export class CartItem{
         this.quantity++;
         this.menuItem=menuItem;
     }
+
+    value():number{
+        return this.quantity*this.menuItem.price;
+    }
 }
