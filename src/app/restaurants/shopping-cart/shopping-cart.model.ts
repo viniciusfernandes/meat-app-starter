@@ -11,12 +11,18 @@ export class ShoppingCart{
         return this.cartItems.map(item=> item.value()).reduce((a,b)=> a+b, 0);
     }
     private increaseCartItem(item:MenuItem, quty:number):CartItem {
+        
+        console.info('id: '+item.id+' car increase '+quty)
         let cItem = this.cartItems.find(i=> i.menuItem.id===item.id);
             if(cItem){
+                console.info('car increase achou '+cItem.quantity)
                 cItem.quantity+=quty;
             } else {
-                this.cartItems.push(new CartItem(item));
+                cItem=new CartItem(item);
+                this.cartItems.push(cItem);
             }
+            console.info('car increase depois '+cItem.quantity)
+        
         return cItem;
     }
 
@@ -29,12 +35,12 @@ export class ShoppingCart{
     }
 
     increase(item:CartItem){
-         this.increaseCartItem(item.menuItem,1);
+         item.quantity++;
     }
     
     decrease(item:CartItem){
-        var cItem = this.increaseCartItem(item.menuItem,-1);
-        if(cItem.quantity<=0){
+       item.quantity--;
+        if(item.quantity<=0){
             this.removeItem(item);
         }
     }

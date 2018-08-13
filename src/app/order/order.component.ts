@@ -24,6 +24,7 @@ export class OrderComponent implements OnInit {
 
   
   increase(item:CartItem){
+    console.info('order increase '+item.quantity)
     this.orderService.increase(item);
   }
 

@@ -1,8 +1,8 @@
-<div *ngIf="!items" class="col-xs-12">
+<div *ngIf="items===null || items.length==0" class="col-xs-12">
   <p>Não há itens de compra. Selecione um item <a [routerLink]="['/restaurants']">aqui!</a></p>
 
   </div>
-<table  *ngIf="items" class="table table-striped">
+<table  *ngIf="items!==null && items.length!=0" class="table table-striped">
   <thead>
   <tr>
     <th class="text-center">Quantidade</th>

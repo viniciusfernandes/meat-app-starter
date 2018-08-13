@@ -51,7 +51,11 @@
             </div>
             <div class="col-xs-12 table-responsive">
 
-              <mt-order-items ></mt-order-items>
+              <mt-order-items [items]="items()" 
+                (increaseEvent)="increase($event)"
+                (decreaseEvent)="decrease($event)"
+                (removeEvent)="remove($event)">
+              </mt-order-items>
             </div>
             <!-- /.col -->
           </div>
