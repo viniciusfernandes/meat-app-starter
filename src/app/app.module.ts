@@ -18,6 +18,9 @@ import { ShoppingCartComponent } from './restaurants/shopping-cart/shopping-cart
 import { MenuComponent } from './restaurants/menu/menu.component';
 import { ReviewComponent } from './restaurants/review/review.component';
 import { ShoppingCart } from './restaurants/shopping-cart/shopping-cart.model';
+import { OrderComponent } from './order/order.component';
+import { OrderItemsComponent } from './order/order-items/order-items.component';
+import { OrderService } from './order/order.service';
 
 @NgModule({
   declarations: [
@@ -32,14 +35,16 @@ import { ShoppingCart } from './restaurants/shopping-cart/shopping-cart.model';
     MenuItemComponent,
     ShoppingCartComponent,
     MenuComponent,
-    ReviewComponent
+    ReviewComponent,
+    OrderComponent,
+    OrderItemsComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [RestaurantService, ShoppingCart],
+  providers: [RestaurantService, ShoppingCart, OrderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
