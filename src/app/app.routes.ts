@@ -4,6 +4,7 @@ import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { AboutComponent } from './about/about.component';
 import { RestaurantDetailComponent } from './restaurants/restaurant-detail/restaurant-detail.component';
 import { MenuComponent } from './restaurants/menu/menu.component';
+import { ReviewComponent } from './restaurants/review/review.component';
 
 
 export const ROUTES: Routes =[
@@ -14,6 +15,7 @@ export const ROUTES: Routes =[
         children:[
             {path:'', redirectTo:'menu', pathMatch:'full'},
             {path:'menu', component:MenuComponent},
+            {path:'review', component:ReviewComponent},
         ]
     }
 
