@@ -1,0 +1,14 @@
+<div *ngFor="let item of menuItems | async" class="col-md-9 col-xs-12">
+  <div class="menu-item-info-box">
+    <span class="menu-item-info-box-icon"><img [src]="item.imagePath"/></span>
+
+    <div class="menu-item-info-box-content">
+      <span class="menu-item-info-box-text">{{item.name}}: {{item.qtySold}}</span>
+      <span class="menu-item-info-box-text">Total: {{item.totValue | currency : 'BRL':true}}</span>
+      <span class="menu-item-info-box-detail">{{item.description}}</span>
+      
+    </div>
+    <!-- /.info-box-content -->
+  </div>
+<!-- /.info-box -->
+</div>

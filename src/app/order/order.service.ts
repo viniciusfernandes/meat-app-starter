@@ -11,6 +11,7 @@ import 'rxjs/add/operator/map'
 import 'rxjs/add/operator/catch';
 import { Router } from "@angular/router";
 import { ErrorHandler } from "../error-handler";
+import { MenuItem } from "../restaurants/menu-item/menu-item.model";
 @Injectable()
 export class OrderService{
     constructor(private shoppingCart:ShoppingCart, private http:Http, private router:Router){
@@ -34,13 +35,16 @@ export class OrderService{
     }
 
     checkOrder(order:Order):Observable<number>{
-        console.info('enviando order: '+JSON.stringify(order));
-      return this.http.post(`${REST_API}/restaurants/order`,order )
-      .map(response=> response.json()).catch(ErrorHandler.handle);
+        return this.http.post(`${REST_API}/restaurants/order`,order )
+                .map(response=> response.json()).catch(ErrorHandler.handle);
     }
 
     
-  clear(){
-    this.shoppingCart.clear();
-  }
+    clear(){
+        this.shoppingCart.clear();
+    }
+
+    findStatistics(idRestaurant:number):Observable<MenuItem[]>{
+        return this.http.get(`${REST_API}/restaurants/${idRestaurant}/menu/statistics`).map(response=> response.json());
+    }
 }

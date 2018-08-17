@@ -6,6 +6,7 @@ import { RestaurantDetailComponent } from './restaurants/restaurant-detail/resta
 import { MenuComponent } from './restaurants/menu/menu.component';
 import { ReviewComponent } from './restaurants/review/review.component';
 import { OrderComponent } from './order/order.component';
+import { StatistcsComponent } from './restaurants/statistcs/statistcs.component';
 
 
 export const ROUTES: Routes =[
@@ -18,6 +19,7 @@ export const ROUTES: Routes =[
             {path:'', redirectTo:'menu', pathMatch:'full'},
             {path:'menu', component:MenuComponent},
             {path:'review', component:ReviewComponent},
+            {path:'statistics', component:StatistcsComponent}
         ]
     }
 

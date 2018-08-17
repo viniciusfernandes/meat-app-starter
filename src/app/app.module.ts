@@ -21,6 +21,7 @@ import { ShoppingCart } from './restaurants/shopping-cart/shopping-cart.model';
 import { OrderComponent } from './order/order.component';
 import { OrderItemsComponent } from './order/order-items/order-items.component';
 import { OrderService } from './order/order.service';
+import { StatistcsComponent } from './restaurants/statistcs/statistcs.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { OrderService } from './order/order.service';
     MenuComponent,
     ReviewComponent,
     OrderComponent,
-    OrderItemsComponent
+    OrderItemsComponent,
+    StatistcsComponent
   ],
   imports: [
     BrowserModule,

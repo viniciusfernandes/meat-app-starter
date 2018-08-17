@@ -4,4 +4,6 @@ export interface MenuItem {
     description:string
     price:number
     imagePath:string
+    qtySold:number
+	totValue:number
 }
